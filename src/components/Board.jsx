@@ -17,7 +17,7 @@ export default function Board() {
     xIsNext ? (nextSquares[i] = "X") : (nextSquares[i] = "O");
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
-  }
+  };
 
   return (
     <>
