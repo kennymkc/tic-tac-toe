@@ -6,10 +6,17 @@ export default function Board() {
   //Array(9).fill(null) creates array with nine elements each set to null
   const [squares, setSquares] = useState(Array(9).fill(null));
 
+  const [xIsNext, setXIsNext] = useState(true);
+
   const handleClick = (i) => {
+    //check if square is filled
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
-    nextSquares[i] = "X";
+    xIsNext ? (nextSquares[i] = "X") : (nextSquares[i] = "O");
     setSquares(nextSquares);
+    setXIsNext(!xIsNext);
   }
 
   return (
